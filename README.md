@@ -1,1 +1,396 @@
-# armkeys.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anna Liza Mayor — Full Stack Developer</title>
+  <meta name="description" content="Resume of Anna Liza Mayor, Full Stack Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;           /* slate-900 */
+      --panel: #111827;        /* gray-900 */
+      --muted: #64748b;        /* slate-500 */
+      --text: #e5e7eb;         /* gray-200 */
+      --accent: #22d3ee;       /* cyan-400 */
+      --chip: #1f2937;         /* gray-800 */
+      --rule: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% -10%, #0b1226 0%, var(--bg) 70%);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .p24 { padding: 24px; }
+    h1 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.15;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .role {
+      margin-top: 6px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 14px;
+      font-size: 15px;
+    }
+    .contact a, a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(255,255,255,0.25);
+    }
+    .contact a:hover, a:hover { color: var(--accent); }
+    .about { color: #cbd5e1; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    h2 {
+      margin: 0 0 12px 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #cbd5e1;
+    }
+    h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .subtle { color: var(--muted); font-size: 14px; }
+    .chip {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 12px;
+      margin: 4px 6px 0 0;
+      color: #cbd5e1;
+    }
+    .stacked > * + * { margin-top: 14px; }
+    .rule { height: 1px; background: var(--rule); margin: 18px 0; border-radius: 1px; }
+    .flexy { display: flex; gap: 10px; flex-wrap: wrap; }
+    .meta { display: flex; gap: 8px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+    .skills .row { display: grid; grid-template-columns: 180px 1fr; gap: 12px; align-items: center; }
+    .bar {
+      background: #0b1022;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar > i {
+      display: block; height: 100%;
+      background: linear-gradient(90deg, var(--accent), #60a5fa);
+      width: var(--pct);
+    }
+    ul { padding-left: 18px; margin: 8px 0 0 0; }
+    li { margin: 6px 0; }
+    footer { color: var(--muted); text-align: center; margin: 26px 0 12px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="card p24">
+      <section>
+        <h1>Anna Liza Mayor</h1>
+        <div class="role">Full Stack Developer</div>
+        <div class="contact">
+          <span>📍 Davao City, Philippines</span>
+          <a href="tel:+639762131298">(+63) 9762131298</a>
+          <a href="mailto:bliss143441@yahoo.com">bliss143441@yahoo.com</a>
+          <a href="https://www.linkedin.com/in/annalizamayor" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/armkeys" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://wa.me/639762131298">Whatsapp</a>
+        </div>
+        <p class="about">
+          Experienced System Developer with a history across business operations, wholesale and retail—both local and remote.
+          Strong support professional with an MS in Information Technology (Computer Programming focus). Exposed to Mobile
+          and Web Application Development, E‑commerce (WordPress, Magento &amp; Shopware), server management, and databases.
+        </p>
+      </section>
+      <aside class="stacked">
+        <div class="card p24">
+          <h2>Skills</h2>
+          <div class="skills stacked">
+            <div class="row">
+              <div class="subtle">Front‑end Languages &amp; Frameworks</div>
+              <div class="bar" style="--pct:70%"><i></i></div>
+            </div>
+            <div class="row">
+              <div class="subtle">Back‑end Technologies &amp; Frameworks</div>
+              <div class="bar" style="--pct:80%"><i></i></div>
+            </div>
+            <div class="row">
+              <div class="subtle">Database Management Systems</div>
+              <div class="bar" style="--pct:80%"><i></i></div>
+            </div>
+            <div class="row">
+              <div class="subtle">Version Control</div>
+              <div class="bar" style="--pct:80%"><i></i></div>
+            </div>
+            <div class="row">
+              <div class="subtle">Soft Skills</div>
+              <div class="bar" style="--pct:80%"><i></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="card p24">
+          <h2>Education</h2>
+          <div class="stacked">
+            <div>
+              <h3>MS Information Technology</h3>
+              <div class="meta">
+                <span>Ateneo de Davao University</span>
+                <span>•</span>
+                <span>2016 — 2019</span>
+              </div>
+            </div>
+            <div>
+              <h3>Information &amp; Communication Technology</h3>
+              <div class="meta">
+                <span>STI College</span>
+                <span>•</span>
+                <span>2012 — 2014</span>
+              </div>
+            </div>
+            <div>
+              <h3>BS Management Accounting</h3>
+              <div class="meta">
+                <span>Ateneo de Davao University</span>
+                <span>•</span>
+                <span>1996 — 2000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <main class="grid">
+      <section class="card p24">
+        <h2>Experience</h2>
+
+        <article class="stacked">
+          <div>
+            <h3>Freelance Full Stack Developer</h3>
+            <div class="meta">
+              <span>Remote clients (US &amp; UK)</span>
+              <span>•</span>
+              <span>Project‑based — Present</span>
+            </div>
+            <ul>
+              <li>Develop front‑ and back‑end web architecture.</li>
+              <li>Maintain servers and databases.</li>
+              <li>Ensure cross‑platform optimization and responsiveness.</li>
+              <li>Design and develop APIs; write technical documentation.</li>
+            </ul>
+          </div>
+
+          <div class="rule"></div>
+
+          <div>
+            <h3>Shopware 6 Developer</h3>
+            <div class="meta">
+              <span>Elio GMH</span>
+              <span>•</span>
+              <span>Remote (Germany)</span>
+              <span>•</span>
+              <span>Mar 2023 – Aug 2023</span>
+            </div>
+            <ul>
+              <li>Built and customized Shopware 6 themes and plugins (PHP/Symfony/Twig)</li>
+              <li>Integrated third-party services via REST APIs; configured payment & shipping providers.</li>
+              <li>Implemented admin extensions, data imports/exports, and catalog optimizations.</li>
+              <li>Managed code with Git/Composer; performed QA, bug fixes, and performance tuning.</li>
+              <li>Collaborated with design & content teams to launch features on schedule.</li>
+            </ul>
+          </div>
+
+          <div class="rule"></div>
+
+          <div>
+            <h3>Senior Web Developer</h3>
+            <div class="meta">
+              <span>Paradox Marketing</span>
+              <span>•</span>
+              <span>Remote (Australia)</span>
+              <span>•</span>
+              <span>May 2020 — 2021</span>
+            </div>
+            <ul>
+              <li>Analyzed requirements, defined objectives, and coordinated timelines.</li>
+              <li>Contributed code across web application layers.</li>
+              <li>Maintained and authored user documentation.</li>
+              <li>Stayed current with modern web development practices.</li>
+            </ul>
+          </div>
+
+          <div class="rule"></div>
+
+          <div>
+            <h3>Web, Hybrid &amp; Android (Kotlin) Mobile Developer</h3>
+            <div class="meta">
+              <span>Gaisano Mall of Davao</span>
+              <span>•</span>
+              <span>Davao, Philippines</span>
+              <span>•</span>
+              <span>Jan 2016 — 2020</span>
+            </div>
+            <ul>
+              <li>Led web application architecture and ensured quality &amp; responsiveness.</li>
+              <li>Collaborated with engineering &amp; design to launch features.</li>
+              <li>Maintained code integrity; converted designs to production UI.</li>
+              <li>Implemented security and data protection best practices.</li>
+              <li>Back‑end: PHP (Laravel). Front‑end: WordPress, WooCommerce, AngularJS.</li>
+              <li>Built hybrid (iOS/Android), Android native (Kotlin), and desktop (C#, .NET) apps.</li>
+              <li>Used Git, Bitbucket, GitHub, GitLab; managed data via Navicat &amp; MySQL Workbench.</li>
+              <li>Integrated cloud messaging and push notifications.</li>
+            </ul>
+          </div>
+
+          <div class="rule"></div>
+
+          <div>
+            <h3>Web Developer, Maintenance &amp; Support</h3>
+            <div class="meta">
+              <span>Virtual Assistant Philippines — Somebody 2 Hire</span>
+              <span>•</span>
+              <span>Davao, Philippines</span>
+              <span>•</span>
+              <span>Oct 2015 — Jan 2016</span>
+            </div>
+            <ul>
+              <li>Maintained SEO and performed ranking audits &amp; tests.</li>
+              <li>Optimized web layout, design, and code for search performance.</li>
+              <li>Troubleshot technical SEO issues.</li>
+            </ul>
+          </div>
+
+          <div class="rule"></div>
+
+          <div>
+            <h3>Freelance System Developer</h3>
+            <div class="meta">
+              <span>Home‑based</span>
+              <span>•</span>
+              <span>Davao, Philippines</span>
+              <span>•</span>
+              <span>Jun 2014 — Oct 2015</span>
+            </div>
+            <ul>
+              <li>HTML/CSS to WordPress Theme — Web Developer/Admin — <a href="http://www.portmizer.com/beta.leapbeyond" target="_blank" rel="noopener">portmizer.com/beta.leapbeyond</a> (Oct 2015)</li>
+              <li>DTR &amp; Payroll (VB.NET) — System Developer — Soyuz Foods Inc. (Deployed Oct 12, 2015)</li>
+              <li>School System (VB.NET) — System Developer (Jun 14, 2014 — Dec 31, 2014)</li>
+              <li>Converted site to responsive — <a href="http://nycpoolchampionships.com" target="_blank" rel="noopener">nycpoolchampionships.com</a> (May 2014)</li>
+              <li>Landing Page Mock‑ups (Web Designs) (May 2014)</li>
+              <li>PSD to HTML/CSS (May 2014)</li>
+            </ul>
+          </div>
+
+          <div class="rule"></div>
+
+          <div>
+            <h3>IT Support — Software / Sales</h3>
+            <div class="meta">
+              <span>Portmizer Philippine Corporation</span>
+              <span>•</span>
+              <span>Davao, Philippines</span>
+              <span>•</span>
+              <span>Sep 2012 — May 2014</span>
+            </div>
+            <ul>
+              <li>Maintained and enhanced company website; developed graphics and brochures.</li>
+              <li>Supported infrastructure; organized content and UX for target users.</li>
+              <li>Handled sales lifecycle from quotations to collections and reporting.</li>
+              <li>Coordinated exception &amp; warranty reports with service engineering.</li>
+            </ul>
+          </div>
+
+          <div class="rule"></div>
+
+          <div>
+            <h3>Internal Auditor</h3>
+            <div class="meta">
+              <span>LTS City Foods, Inc.</span>
+              <span>•</span>
+              <span>Davao, Philippines</span>
+              <span>•</span>
+              <span>Aug 2004 — Mar 2012</span>
+            </div>
+            <ul>
+              <li>Audited compliance against policies, sanitation, product quality, and service standards.</li>
+              <li>Highlighted organizational issues and recommended solutions.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <aside class="card p24">
+        <h2>Tech &amp; Tools</h2>
+        <div class="flexy">
+          <span class="chip">PHP</span>
+          <span class="chip">WordPress</span>
+          <span class="chip">WooCommerce</span>
+          <span class="chip">Magento</span>
+          <span class="chip">Shopware</span>
+          <span class="chip">AngularJS</span>
+          <span class="chip">Kotlin (Android)</span>
+          <span class="chip">C# / .NET</span>
+          <span class="chip">Hybrid Mobile</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">Navicat</span>
+          <span class="chip">MySQL Workbench</span>
+          <span class="chip">Git / GitHub / GitLab / Bitbucket</span>
+          <span class="chip">Cloud Messaging</span>
+          <span class="chip">Push Notifications</span>
+          <span class="chip">SEO</span>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <script>document.write(new Date().getFullYear())</script> Anna Liza Mayor
+    </footer>
+  </div>
+</body>
+</html>
