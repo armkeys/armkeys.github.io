@@ -148,6 +148,43 @@
     #snow-canvas{ display:none; }
     }
 
+    /* Portfolio section styles */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+    
+    .portfolio-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 18px;
+      transition: all 0.25s ease;
+    }
+    
+    .portfolio-card:hover {
+      border-color: var(--accent-strong);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+    
+    .portfolio-card h3 {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+    }
+    
+    .portfolio-card a {
+      color: var(--accent);
+      text-decoration: none;
+      border: none;
+    }
+    
+    .portfolio-card a:hover {
+      color: var(--accent-strong);
+    }
+
   </style>
 </head>
 <body>
@@ -417,6 +454,41 @@
           <span class="chip">SEO</span>
         </div>
       </aside>
+       <!-- 🔹 Portfolio Section Added Below -->
+      <section class="card p24">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <h3><a href="https://staging.profoundfinancial.biz" target="_blank" rel="noopener">Profound Financial</a></h3>
+            <p class="subtle">Elementor + Membership Management + Subscriptions</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3><a href="https://danitax.guru" target="_blank" rel="noopener">DaniTax Guru</a></h3>
+            <p class="subtle">Elementor + Keap CRM</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3><a href="https://www.doubleportionsupply.com/" target="_blank" rel="noopener">Double Portion Supply</a></h3>
+            <p class="subtle">WooCommerce + Custom Plugin Development</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3><a href="https://www.westcoastplastics.com/" target="_blank" rel="noopener">West Coast Plastics</a></h3>
+            <p class="subtle">WooCommerce + Product Customization + Inventory Control</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3><a href="https://profoundfamilyresources.com/" target="_blank" rel="noopener">Profound Family Resources</a></h3>
+            <p class="subtle">Genesis Theme + PayPal Donations</p>
+          </div>
+
+          <div class="portfolio-card">
+            <h3><a href="https://plans.profoundfinancial.us/" target="_blank" rel="noopener">Profound Financial Plans</a></h3>
+            <p class="subtle">YITH Theme + Custom Estimator Plugin (Forminator + E2Pdf)</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
