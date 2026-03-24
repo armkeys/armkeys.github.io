@@ -185,6 +185,48 @@
       color: var(--accent-strong);
     }
 
+    .cta-section {
+  text-align: center;
+}
+
+.cta-title {
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.cta-text {
+  max-width: 700px;
+  margin: 0 auto 18px;
+  color: #cbd5e1;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.cta-btn:hover {
+  border-color: var(--accent-strong);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+}
   </style>
 </head>
 <body>
@@ -205,7 +247,7 @@
         <div class="contact">
           <span>📍 Davao City, Philippines</span>
           <a href="tel:+639762131298">(+63) 9762131298</a>
-          <a href="mailto:bliss143441@yahoo.com">bliss143441@yahoo.com</a>
+          <a href="mailto:anna.mayor@outlook.ph">anna.mayor@outlook.ph</a>
           <a href="https://www.linkedin.com/in/annalizamayor" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/armkeys" target="_blank" rel="noopener">GitHub</a>
           <a href="https://wa.me/639762131298">Whatsapp</a>
@@ -503,7 +545,19 @@
         </div>
       </section>
     </main>
-
+  <section class="card p24 cta-section">
+    <h2>Interested to work together? Get in touch</h2>
+    <h3 class="cta-title">Let’s build something great together.</h3>
+    <p class="cta-text">
+      I’m available for freelance, contract, and part-time development work focused on WordPress, WooCommerce, custom plugins, API integrations, and full-stack web solutions.
+    </p>
+  
+    <div class="cta-actions">
+      <a class="cta-btn" href="mailto:anna.mayor@outlook.ph">anna.mayor@outlook.ph</a>
+      <a class="cta-btn" href="tel:+639762131298">+63 976 213 1298</a>
+      <a class="cta-btn" href="https://wa.me/639762131298" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </section>
     <footer>
       © <script>document.write(new Date().getFullYear())</script> Anna Liza Mayor
     </footer>
