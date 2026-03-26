@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AM Commerce Engineering | WooCommerce, Magento & Shopware Development</title>
+  <meta name="description" content="AM Commerce Engineering helps e-commerce businesses build, fix, and scale WooCommerce, Magento, and Shopware stores with custom development, integrations, and long-term support." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --panel: #151f39;
+      --panel-2: #1a2747;
+      --text: #e8eefc;
+      --muted: #aab7d8;
+      --accent: #66d9ef;
+      --accent-2: #8ef5c8;
+      --line: rgba(255,255,255,0.08);
+      --shadow: 0 20px 50px rgba(0,0,0,0.28);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(102,217,239,0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(142,245,200,0.08), transparent 25%),
+        linear-gradient(180deg, #08101f 0%, #0b1020 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 16, 31, 0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06111a;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hero {
+      padding: 88px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 4vw, 4.6rem);
+      max-width: 12ch;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .point {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .point span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card .card-title {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .stat-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .stat {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat:last-child { border-bottom: 0; }
+
+    .stat strong {
+      font-size: 1.55rem;
+      color: var(--accent-2);
+      white-space: nowrap;
+    }
+
+    .stat span {
+      color: var(--muted);
+      max-width: 26ch;
+      text-align: right;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 64ch;
+      margin: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 { font-size: 1.18rem; }
+    .card p { color: var(--muted); margin: 0 0 14px; }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(102,217,239,0.09);
+      border: 1px solid rgba(102,217,239,0.16);
+      color: #d7fbff;
+      font-size: 0.88rem;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .platform {
+      padding: 18px;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .case-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(102,217,239,0.09), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      padding: 24px;
+      min-height: 280px;
+    }
+
+    .case-card p,
+    .case-card li,
+    .about p,
+    .process p,
+    .contact p,
+    .faq p {
+      color: var(--muted);
+    }
+
+    .case-card ul,
+    .process ol,
+    .faq-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .about,
+    .process,
+    .contact,
+    .faq {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .contact-list a {
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .cta {
+      margin: 42px 0 20px;
+      padding: 30px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(102,217,239,0.13), rgba(142,245,200,0.12));
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta p {
+      color: #d5e4ff;
+      max-width: 56ch;
+      margin: 0 auto 22px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 50px;
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .cards,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .platforms {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        padding: 14px 0;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .platforms {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="AM Commerce Engineering home">
+        <strong>AM Commerce Engineering</strong>
+        <span>WooCommerce, Magento & Shopware Development</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-secondary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">E-commerce engineering for brands that need real technical execution</div>
+          <h1>Build, fix, and scale your e-commerce systems.</h1>
+          <p class="lead">
+            AM Commerce Engineering helps businesses improve WooCommerce, Magento, and Shopware stores through
+            custom development, platform rescue work, integrations, and long-term technical support.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book a Consultation</a>
+            <a class="btn btn-secondary" href="https://armkeys.github.io/" target="_blank" rel="noopener noreferrer">View Portfolio</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="point">
+              <strong>Custom Development</strong>
+              <span>Plugins, modules, workflows, and business-specific functionality.</span>
+            </div>
+            <div class="point">
+              <strong>Store Rescue</strong>
+              <span>Fix broken features, poor performance, and unstable checkout or shipping flows.</span>
+            </div>
+            <div class="point">
+              <strong>Integrations</strong>
+              <span>Connect e-commerce platforms to ERPs, CRMs, shipping tools, and custom APIs.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Business summary">
+          <div class="card-title">What I help with</div>
+          <div class="stat-list">
+            <div class="stat">
+              <strong>WooCommerce</strong>
+              <span>Custom plugin work, product workflows, shipping logic, and ongoing maintenance.</span>
+            </div>
+            <div class="stat">
+              <strong>Magento</strong>
+              <span>Support for customizations, troubleshooting, structured enhancements, and integrations.</span>
+            </div>
+            <div class="stat">
+              <strong>Shopware</strong>
+              <span>Theme, plugin, and system support for modern commerce builds and migration paths.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Services</h2>
+            <p>
+              Technical help for businesses that need more than a basic store setup. The focus is on reliable systems,
+              custom logic, and practical business outcomes.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Custom E-commerce Development</h3>
+            <p>
+              Build tailored features that match how your business actually works, from product behavior to checkout,
+              shipping, account tools, and admin workflows.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Custom plugins</span>
+              <span class="chip">Checkout logic</span>
+              <span class="chip">Admin tools</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Store Rescue & Optimization</h3>
+            <p>
+              Step into underperforming or unstable stores and resolve the technical issues that slow growth, reduce
+              conversions, or frustrate operations.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Bug fixing</span>
+              <span class="chip">Performance</span>
+              <span class="chip">Technical cleanup</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Integrations & Automation</h3>
+            <p>
+              Connect your commerce platform with external systems such as CRMs, shipping tools, inventory systems,
+              payment workflows, and custom APIs.
+            </p>
+            <div class="chip-row">
+              <span class="chip">API integration</span>
+              <span class="chip">Automation</span>
+              <span class="chip">Data sync</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Platforms</h2>
+            <p>
+              Support centered on platforms commonly used by established and growing e-commerce businesses.
+            </p>
+          </div>
+        </div>
+
+        <div class="platforms">
+          <div class="platform">WooCommerce</div>
+          <div class="platform">Magento 2</div>
+          <div class="platform">Shopware</div>
+          <div class="platform">Custom APIs</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-studies">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Selected Work</h2>
+            <p>
+              Examples of the types of systems and business problems handled across custom e-commerce projects.
+            </p>
+          </div>
+          <a class="btn btn-secondary" href="https://armkeys.github.io/" target="_blank" rel="noopener noreferrer">See Full Portfolio</a>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <h3>Hybrid Shipping Supplies</h3>
+            <p>
+              Custom WooCommerce shipping logic for mixed-source fulfillment and per-package rate handling.
+            </p>
+            <ul>
+              <li>Split cart contents by product source</li>
+              <li>Handle different shipping methods per package</li>
+              <li>Support structured order workflows</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <h3>Double Portion Supply</h3>
+            <p>
+              WooCommerce enhancements for product visibility, category behavior, and new-stock workflows.
+            </p>
+            <ul>
+              <li>Custom plugin for new-stock product control</li>
+              <li>Variation-focused storefront behavior</li>
+              <li>Admin filtering and reset tools</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <h3>Progressive Education Network</h3>
+            <p>
+              Complex WordPress portal work involving custom content workflows, frontend dashboards, and migrations.
+            </p>
+            <ul>
+              <li>Migration and structured content mapping</li>
+              <li>Partner-driven portal workflows</li>
+              <li>Custom notification and approval logic</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <article class="about">
+          <h2>About AM Commerce Engineering</h2>
+          <p>
+            AM Commerce Engineering is the business brand of Anna Liza Mayor, a developer focused on e-commerce
+            systems, custom development, and technical problem solving for online stores.
+          </p>
+          <p>
+            The work is best suited for businesses that need practical engineering support, not just visual website
+            setup. That includes custom functionality, troubleshooting, system improvements, and platform-specific
+            problem solving.
+          </p>
+        </article>
+
+        <article class="process">
+          <h2>How projects are handled</h2>
+          <ol>
+            <li><p>Review the business problem, current setup, and technical constraints.</p></li>
+            <li><p>Break work into manageable, testable milestones.</p></li>
+            <li><p>Develop practical solutions with clear progress and feedback loops.</p></li>
+            <li><p>Launch, monitor, and support improvements after delivery.</p></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container contact-grid">
+        <article class="faq">
+          <h2>Best fit clients</h2>
+          <div class="faq-list">
+            <p>Businesses already selling online and needing more advanced technical work.</p>
+            <p>Teams that need help with WooCommerce, Magento, Shopware, or custom platform integrations.</p>
+            <p>Store owners who need reliable support for rescue work, system fixes, or growth-focused improvements.</p>
+          </div>
+        </article>
+
+        <article class="contact" id="contact">
+          <h2>Contact</h2>
+          <p>
+            Looking for a technical partner for your store, custom feature, or integration project? Reach out with a
+            short overview of your business and what you need solved.
+          </p>
+
+          <div class="contact-list">
+            <a href="mailto:anna.mayor@outlook.ph">anna.mayor@outlook.ph</a>
+            <a href="tel:+639762131298">+63 976 213 1298</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://armkeys.github.io/" target="_blank" rel="noopener noreferrer">Current Portfolio</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Need help with your e-commerce systems?</h2>
+          <p>
+            Whether you need custom development, integration work, or technical rescue support, AM Commerce Engineering
+            is built to help businesses solve complex commerce problems with practical execution.
+          </p>
+          <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+            <a class="btn btn-primary" href="mailto:anna.mayor@outlook.ph?subject=Project%20Inquiry%20for%20AM%20Commerce%20Engineering">Send an Inquiry</a>
+            <a class="btn btn-secondary" href="https://armkeys.github.io/" target="_blank" rel="noopener noreferrer">Open Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> AM Commerce Engineering. All rights reserved.</div>
+      <div>Built for WooCommerce, Magento, Shopware, and custom commerce systems.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
